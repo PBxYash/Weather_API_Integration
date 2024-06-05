@@ -2,7 +2,6 @@ package com.Weather._API_Integration.Service;
 
 import com.Weather._API_Integration.Entity.Units;
 import com.Weather._API_Integration.Entity.WeatherResponse;
-import com.Weather._API_Integration.Exception.ClientErrorException;
 import com.Weather._API_Integration.Exception.UnauthorizedException;
 import com.Weather._API_Integration.Exception.WeatherServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
