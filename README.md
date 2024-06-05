@@ -43,7 +43,7 @@ The application will start on port 8081 by default.
     {
         "latitude": "12.45",
         "longitude": "12.45",
-        "apiKey": "YOUR_API_KEY",
+        "apiKey": "bd5e378503939ddaee76f12ad7a97608",
         "units": "metric"
     }
     ```
@@ -51,13 +51,13 @@ The application will start on port 8081 by default.
     ```json
     {
      "longitude": 12.45,
-    "latitude": 12.45,
-    "weather_description": "moderate rain",
-    "temperature": 298.48,
-    "feels_like": 298.74,
-    "minimum_temperature": 297.56,
-    "maximum_temperature": 300.05
-    }
+     "latitude": 12.45,
+     "temperature": 34.89,
+     "weather_description": "scattered clouds",
+     "feels_like": 33.94,
+     "minimum_temperature": 34.89,
+     "maximum_temperature": 34.89
+  }
     ```
 
 
@@ -82,7 +82,7 @@ Swagger UI is available to explore and test the API endpoints.
 1. Open a web browser.
 2. Navigate to the Swagger UI:
     ```
-    http://localhost:8080/swagger-ui.html
+    http://localhost:8081/swagger-ui.html
     ```
 3. Use the Swagger UI to test the API endpoints.
 
