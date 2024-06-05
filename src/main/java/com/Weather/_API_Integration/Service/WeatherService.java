@@ -1,8 +1,8 @@
 package com.Weather._API_Integration.Service;
 
+import com.Weather._API_Integration.Entity.OpenWeatherMapResponse;
 import com.Weather._API_Integration.Entity.Units;
 import com.Weather._API_Integration.Entity.WeatherResponse;
-import com.Weather._API_Integration.Exception.ClientErrorException;
 import com.Weather._API_Integration.Exception.UnauthorizedException;
 import com.Weather._API_Integration.Exception.WeatherServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,17 @@ public class WeatherService {
                     .replace("{apiKey}", apiKey)
                     .replace("{units}", units.name().toLowerCase());
 
-            return restTemplate.getForObject(url, WeatherResponse.class);
+            OpenWeatherMapResponse response = restTemplate.getForObject(url, OpenWeatherMapResponse.class);
+
+            return new WeatherResponse(
+                    response.getCoord().getLon(),
+                    response.getCoord().getLat(),
+                    response.getWeather()[0].getDescription(),
+                    response.getMain().getTemp(),
+                    response.getMain().getFeelsLike(),
+                    response.getMain().getTempMin(),
+                    response.getMain().getTempMax()
+            );
         } catch (HttpClientErrorException e) {
             HttpStatus statusCode = HttpStatus.resolve(e.getStatusCode().value());
             System.out.println(statusCode);
